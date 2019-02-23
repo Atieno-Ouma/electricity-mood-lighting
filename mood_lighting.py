@@ -41,8 +41,9 @@ def on_subscribe(client, userdata, mid, granted_qos):
 
 def on_message(client, userdata, msg):
     payload = json.loads(msg.payload.decode("utf-8"))
-    if payload['topic'] == "p":
-        watt_values[payload['device_id']] = payload['value']
+    for r in payload['readings']:
+        if r['topic'] == "watts":
+            watt_values[payload['device_id']] = r['value']
 
 
 def on_disconnect(client, userdata, rc):
