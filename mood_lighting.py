@@ -79,14 +79,17 @@ def set_mood(actual):
 
     log.debug('Actual {}, Hue {}, Saturation {}, Transition {}s: '.format(actual, hue, saturation, transition_time))
 
-    group.saturation = saturation
-    group.hue = hue
-    group.transitiontime = transition_time * 10
-    group.brightness = 75
-    time.sleep(transition_time)
-    group.transitiontime = (transition_time * 10) / 2
-    group.brightness = 254
-    time.sleep(transition_time / 2)
+    try:
+        group.saturation = saturation
+        group.hue = hue
+        group.transitiontime = transition_time * 10
+        group.brightness = 75
+        time.sleep(transition_time)
+        group.transitiontime = (transition_time * 10) / 2
+        group.brightness = 254
+        time.sleep(transition_time / 2)
+    except ConnectionResetError as e:
+        log.debug(e)
 
 
 def cleanup(signum, frame):
