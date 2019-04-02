@@ -1,5 +1,6 @@
 # Electricity Mood Lighting
 
-This controls a Philips Hue light bulb at The Plant, in the stairwell by the east side of the lobby. As more electricity is comsumed in the building, the light glows redder and pulses more quickly.
+This controls a color-changing smart light bulb located in the stairwell by the east side of the lobby at The Plant. As the total electricity use in the building increases, the light will pulse faster and glow a deeper red. At low electricity use, the bulb becomes a normal shade of yellow with a more relaxed pulse rate.
 
-https://www.instagram.com/p/BkYC6OygI3m/
+
+![](https://github.com/The-Plant/electricity-mood-lighting/blob/master/light.gif)
